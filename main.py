@@ -41,6 +41,7 @@ class YaUploader:
         # Удаляем локальные файлы с диска
         os.remove(f'{file_name}.jpg')
 
+    @my_log.make_log('YaUploader.log')
     def upload_photos(self, photos_dict):
         # Создаём папку на Яндекс Диске
         self.create_folder()
@@ -73,6 +74,7 @@ class VKphotos:
         self.token = token
         self.vk_id = int(input('Input ID: (press enter for default = 1517274)') or '1517274')
 
+    @my_log.make_log('VKphotos.log')
     def get_photos(self, count_photos):
         params = {
             'owner_id': self.vk_id,
